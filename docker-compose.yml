@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: [ "CMD", "wget", "-qO-", "http://backend:8080/actuator/health" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data/calculator.db?date_string_format=yyyy-MM-dd
+      - SPRING_LOGGING_FILE_NAME=/logs/backend.log
+      - TZ=Europe/Tallinn
+      - JAVA_TOOL_OPTIONS=-Duser.timezone=Europe/Tallinn
+    volumes:
+      - ./data:/app/data
+      - ./logs:/logs
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,37 @@
+/* general */
+.errors {
+    border: 1px solid red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffe6e6;
+    border-radius: 6px;
+}
+
+.errors p {
+    margin: 0;
+    color: #b00020;
+    font-size: 0.95rem;
+}
+
+/* form error */
+.form-error {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #ffe6e6;
+    color: #b00020;
+}
+
+.input-error {
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.25);
+}
+
+.error-text {
+    grid-row: 3;
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    min-height: 16px;
+}

@@ -1,0 +1,21 @@
+# Auto normalize text files
+* text=auto
+
+# Shell scripts
+*.sh text eol=lf
+
+# Docker, application
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Backend (Java)
+*.java text eol=lf
+*.xml text eol=lf
+
+# Frontend
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+

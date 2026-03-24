@@ -1,0 +1,62 @@
+.share-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.share-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.share-input {
+    width: 100%;
+    height: 38px;
+    padding: 0 90px 0 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.share-input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79,172,254,0.25);
+    outline: none;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4facfe;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeInOut 2s ease;
+    z-index: 1000;
+}
+
+@keyframes fadeInOut {
+    0%   { opacity: 0; transform: translateY(10px); }
+    10%  { opacity: 1; transform: translateY(0); }
+    90%  { opacity: 1; }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+    .share-box {
+        max-width: 100%;
+    }
+
+    .share-input {
+        padding-right: 90px;
+    }
+}

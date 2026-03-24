@@ -1,0 +1,105 @@
+.form-submit {
+    grid-column: 3;
+    grid-row: 2;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.form-submit:hover:not(:disabled) {
+    background-color: #444;
+    transform: scale(1.03);
+}
+
+.share-button {
+    align-self: flex-start;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #222;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.share-button:hover:not(:disabled) {
+    background-color: #eaeaea;
+    transform: scale(1.03);
+}
+
+.copy-button {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.copy-button:hover {
+    background-color: #3a8be0;
+}
+
+.copy-button.copied {
+    background-color: #4facfe;
+}
+
+.errors button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #d32f2f;
+    color: #ffffff;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.errors button:hover {
+    background-color: #b71c1c;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+    .form-submit {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    /* .share-input */
+    .copy-button {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 30px;
+        padding: 0 12px;
+        border-radius: 5px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+}
