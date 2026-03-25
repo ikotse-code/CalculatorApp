@@ -21,7 +21,6 @@ export default function Form({ form, setForm, onSubmit, errors = {}, setFormErro
                             name="grossSalary"
                             value={form.grossSalary}
                             placeholder="Salary"
-                            aria-required="true"
                             aria-invalid={!!errors.grossSalary}
                             aria-describedby={errors.grossSalary ? "grossSalary-error" : undefined}
                             className={errors.grossSalary ? "input-error" : ""}
@@ -40,7 +39,7 @@ export default function Form({ form, setForm, onSubmit, errors = {}, setFormErro
                 </div>
 
                 <div className="form-group">
-                        <label htmlFor="birthDate">Birth Date</label>
+                        <label htmlFor="birthDate">Birth Date <span class="required">*</span></label>
                         <input
                             id="birthDate"
                             type="date"

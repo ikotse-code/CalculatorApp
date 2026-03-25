@@ -50,6 +50,10 @@
     outline: none;
 }
 
+.required {
+  color: red;
+}
+
 /* mobile */
 @media (max-width: 480px) {
     .form {

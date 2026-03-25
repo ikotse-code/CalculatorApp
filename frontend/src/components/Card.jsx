@@ -10,11 +10,11 @@ export default function Card({ item, index, totalAmount, userSalary, onSelect })
     return (
         <article
             className="card"
-            tabIndex={0} // клавиатурный фокус
-            role="listitem" // интерактивная карточка
+            tabIndex={0}
+            role="listitem"
             aria-labelledby={`card-title-${index}`}
             aria-describedby={`card-details-${index}`}
-            onKeyDown={handleKeyPress} // Enter/Space поддержка
+            onKeyDown={handleKeyPress}
             onClick={() => onSelect && onSelect(item)}
             data-testid={`card-${item.month}`}
             style={{ animationDelay: `${index * 120}ms` }}
@@ -27,7 +27,7 @@ export default function Card({ item, index, totalAmount, userSalary, onSelect })
                     <p className="card-month">Month: {item.month}</p>
                     <p className="card-amount">Amount: {item.amount.toFixed(2)} €</p>
                     <p className="card-days">{item.daysPaid} days</p>
-                    <p className="card-total">Total amount per year: {totalAmount.toFixed(2)} €</p>
+                    <p className="card-total">Total amount: {totalAmount.toFixed(2)} €</p>
                 </div>
             </div>
         </article>
