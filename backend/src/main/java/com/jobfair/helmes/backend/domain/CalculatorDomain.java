@@ -28,7 +28,7 @@ public class CalculatorDomain {
 
         List<MonthlyBenefitDto> monthlyBenefits = new ArrayList<>();
 
-        LocalDate periodEnd = birthDate.plusYears(1).minusDays(1);
+        LocalDate periodEnd = birthDate.plusMonths(MONTHS_TO_CALCULATE).minusDays(1);
 
         int monthsToCalculate = MONTHS_TO_CALCULATE;
         if (birthDate.getDayOfMonth() != 1) {
