@@ -106,8 +106,13 @@ public class CalculatorService {
                 });
 
         if (entity.getId() != null) {
+            if (entity.getExpiresAt().isBefore(LocalDateTime.now())) {
+                throw new ResourceNotFoundException("Session expired");
+            } else {
+
             entity.updateData(request.getGrossSalary(), request.getBirthDate());
             entity.refreshExpiration(ttlDays);
+            }
         }
 
         try {

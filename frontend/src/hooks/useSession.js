@@ -51,9 +51,7 @@ export const useSession = () => {
                 } catch (err) {
                     console.warn("Restore failed:", err.message);
 
-                    if (isFromUrl) {
-                        setError(err.message);
-                    }
+                    setError(err.message);
 
                     return null;
                 }
@@ -81,6 +79,7 @@ export const useSession = () => {
         data,
         setData,
         error,
+        setError,
         clearSession,
     };
 };

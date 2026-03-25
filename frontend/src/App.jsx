@@ -24,6 +24,7 @@ export default function App() {
         data,
         setData,
         error: sessionError,
+        setError: setSessionError,
         clearSession,
     } = useSession();
 
@@ -59,6 +60,14 @@ export default function App() {
             setFormErrors({});
         } catch (err) {
             console.log("API ERROR:", err);
+
+            const isSessionExpired =
+                    err.message?.toLowerCase().includes("expired");
+
+                if (isSessionExpired) {
+                    setSessionError("Session expired. Please start over.");
+                    return;
+                }
 
             // JSON
             if (err.type === "json" && err.data) {
@@ -118,8 +127,8 @@ export default function App() {
             ) : (
                 <>
                     {/* form errors */}
-                    {Object.keys(formErrors).length > 0 && (
-                        <ErrorSection message={formErrors.general || ""} />
+                    {formErrors.general && (
+                        <ErrorSection message={formErrors.general} />
                     )}
 
                     <Form

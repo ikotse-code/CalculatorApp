@@ -39,7 +39,7 @@ export default function Form({ form, setForm, onSubmit, errors = {}, setFormErro
                 </div>
 
                 <div className="form-group">
-                        <label htmlFor="birthDate">Birth Date <span class="required">*</span></label>
+                        <label htmlFor="birthDate">Birth Date <span className="required">*</span></label>
                         <input
                             id="birthDate"
                             type="date"
@@ -63,13 +63,6 @@ export default function Form({ form, setForm, onSubmit, errors = {}, setFormErro
                             {errors.birthDate || "\u00A0"}
                         </span>
                 </div>
-
-                {/* GENERAL ERROR */}
-                {errors.general && (
-                    <div className="form-error" role="alert">
-                        {errors.general}
-                    </div>
-                )}
 
                 <button
                     id="submit"
