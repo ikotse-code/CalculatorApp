@@ -28,10 +28,21 @@ public class CalculatorDomain {
 
         List<MonthlyBenefitDto> monthlyBenefits = new ArrayList<>();
 
-        for (int i = 0; i < MONTHS_TO_CALCULATE; i++) {
+        LocalDate periodEnd = birthDate.plusYears(1).minusDays(1);
+
+        int monthsToCalculate = MONTHS_TO_CALCULATE;
+        if (birthDate.getDayOfMonth() != 1) {
+            monthsToCalculate += 1;
+        }
+
+        for (int i = 0; i < monthsToCalculate; i++) {
 
             LocalDate start = birthDate.plusMonths(i);
             LocalDate end = start.withDayOfMonth(start.lengthOfMonth());
+
+            if (end.isAfter(periodEnd)) {
+                end = periodEnd;
+            }
 
             int days = (i == 0)
                     ? (int) ChronoUnit.DAYS.between(birthDate, end) + 1
