@@ -4,7 +4,6 @@ This project is a salary-based monthly benefit calculator. It includes a **Sprin
 
 Accessibility is supported for visually impaired users.
 
----
 
 ## Features
 - Calculates monthly benefits based on gross salary and child's birthdate.
