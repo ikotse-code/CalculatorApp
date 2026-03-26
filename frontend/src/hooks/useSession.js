@@ -1,4 +1,4 @@
-import { useEffect, useState, /*useRef*/ } from "react";
+import { useEffect, useState } from "react";
 import { restoreSession } from "../api/calculatorApi";
 
 const STORAGE_KEY = "sessionId";
@@ -7,8 +7,6 @@ export const useSession = () => {
     const [sessionId, setSessionIdState] = useState(null);
     const [data, setData] = useState(null);
     const [error, setError] = useState(null); // session errors
-
-    //const didInit = useRef(false); // ensures init() runs only once
 
     const clearSession = () => {
         setSessionIdState(null);
@@ -27,8 +25,6 @@ export const useSession = () => {
     };
 
     useEffect(() => {
-        //if (didInit.current) return;
-        //didInit.current = true;
 
         const init = async () => {
             const params = new URLSearchParams(window.location.search);
